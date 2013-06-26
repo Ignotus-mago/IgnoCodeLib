@@ -47,10 +47,62 @@
 			<p>
 			Hierarchical display list for graphics and text with export to Adobe Illustrator 7.0 file format.<br>
 			Supports display and output of complex objects composed of lines and cubic BŽzier curves, simple text, RGB and CMYK color, and geometric transforms. <br>
-			Feel free to replace this paragraph with a description of the library.<br>
-			Contributed libraries are developed, documented, and maintained by members of the Processing community. Further directions are included with each library. For feedback and support, please post to the Discourse. We strongly encourage all libraries to be open source, but not all of them are.
+			<!-- begin my description -->
+			<p>
+			Version 0.2 implemented many new features including:	
+			<ul>
+				<li>Transformation from the Processing coordinate 
+				    system to the Adobe Illustrator coordinate system.</li>
+				<li>Subclasses of BezShape with factory methods for rectangles, 
+				    ellipses, polygons, lines and curves.</li>
+				<li>Turtlegraphics with a stack of turtle states, handy for L-systems, etc.</li>
+				<li>A ComponentVisitor class for navigating and acting upon 
+				    elements in the hierarchical display list.</li>
+				<li>Drawing to off-screen buffers.</li>
+			</ul>
 			</p>
-			</div>
+			<p>
+			I delayed announcing a release of version 0.2 while Processing 2.0 was on its 
+			way. And I delayed. Here is version 0.3, for Processing 2.0.
+			</p>
+			<p>
+			IgnoCodeLib 0.3 modifies and adds to 0.2 in some notable ways.
+			<ul>
+				<li>The package namespace has changed from com.ignotus to net.paulhertz</li>
+				<li>A library initializer class, IgnoCodeLib, should be called in the 
+				    setup of the host PApplet. It will cache a static reference to the 
+				    PApplet for other classes in the same package. (Spinners and SpinnersTwo 
+				    in the examples show why this can be useful).</li>
+				<li>All classes that extend DisplayComponent now have constructors or 
+				    factory methods that do not require a reference to the host PApplet 
+				    be passed in. They obtain the reference from the initialized library.</li>
+				<li>Constructors and factory methods that pass in the host PApplet are 
+				    still supported. If you change the package namespaces, chances are that 
+				    code for IgnoCodeLib 0.2 will run with IgnoCodeLib 0.3.</li>
+				<li>The DocumentComponent.write() method now automatically performs a 
+				    transform (a horizontal mirror within the document bounding box) 
+				    of all nested geometry from the Processing coordinate 
+				    system to the Adobe Illustrator coordinate system. 
+				    The transform is only applied by the DocumentComponent write 
+				    method, not by write methods in other components.</li>
+				<li>The simplest way to use IgnoCodeLib is to add all components 
+				    to a document component, or to group components and layer components 
+				    within the document component. Then call the document component's draw() 
+				    method to draw and its write() method to write.</li>
+			</ul>
+			The examples have all been updated for version 0.3, but the old examples 
+			(modified to run in version 0.3) are bundled in a .zip file in the 
+			examples folder.
+			</p>			
+			<p>
+			The images in <a href="http://www.flickr.com/photos/ignotus/sets/72157629848917975/" 
+			target="_blank">Sampling Patterns 21</a> and 
+			<a href="http://www.flickr.com/photos/ignotus/sets/72157629848739037/" 
+			target="_blank">Boids 21</a> were created with this software. 
+			</p>
+			<!-- end my description -->
+			</p>
+		</div>
 			
 			
 			
@@ -70,7 +122,7 @@
 			<div id="resources">
 			<p><strong>Keywords</strong>. export, graphics, 2D, curves, geometry</p>
 			<p><strong>Reference</strong>. Have a look at the javadoc reference <a href="./reference/index.html" target="_blank">here</a>. A copy of the reference is included in the .zip as well.</p>		
-			<p><strong>Source</strong>. The source code of IgnoCodeLib is available at <a href="http://github.com/Ignotus-mago/IgnoCodeLib">GitHub</a>, and its repository can be browsed <a href="http://github.com/Ignotus-mago/IgnoCodeLib/src/net/paulhertz/" target="_blank">here</a>.</p>			
+			<p><strong>Source</strong>. The source code of IgnoCodeLib is available at <a href="https://github.com/Ignotus-mago/IgnoCodeLib">GitHub</a>, and its repository can be browsed <a href="https://github.com/Ignotus-mago/IgnoCodeLib.git" target="_blank">here</a>.</p>			
 			</div>
 			
 			
@@ -120,10 +172,17 @@
 			-->
 			
 			<!-- use the images/screenshots section. Activate the link to the misc section in the menu above. -->
-			<!--
+			<!-- -->
 			<div id="images" class="clear">
+			<p>
+			<a href="http://www.flickr.com/photos/ignotus/7113260741/in/set-72157629601877565" target="_blank"><img src="eclipse.jpg" alt="Eclipse" width="640" height="480" align="middle" /></a>
+			<br /><a href="http://www.flickr.com/photos/ignotus/7113260741/in/set-72157629601877565" target="_blank">Eclipse (detail)</a>
+			</p>
+			<p>
+			<a href="http://www.flickr.com/photos/ignotus/5303608990/in/set-72157626088733463/" target="_blank"><img src="losamantes.jpg" alt="Los Amantes" width="640" height="396" align="middle" /></a>
+			<br /><a href="http://www.flickr.com/photos/ignotus/5303608990/in/set-72157626088733463/" target="_blank">Los Amantes</a>
+			</p>
 			</div>
-			-->
 			
 			
 			<br class="clear" />
