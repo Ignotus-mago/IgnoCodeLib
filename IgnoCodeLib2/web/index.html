@@ -50,7 +50,7 @@
 			<!-- begin my description -->
 			<p>
 			Version 0.2 implemented many new features including:	
-			<ul>
+			<ul class="changes">
 				<li>Transformation from the Processing coordinate 
 				    system to the Adobe Illustrator coordinate system.</li>
 				<li>Subclasses of BezShape with factory methods for rectangles, 
@@ -62,24 +62,20 @@
 			</ul>
 			</p>
 			<p>
-			I delayed announcing a release of version 0.2 while Processing 2.0 was on its 
-			way. And I delayed. Here is version 0.3, for Processing 2.0.
-			</p>
-			<p>
-			IgnoCodeLib 0.3 modifies and adds to 0.2 in some notable ways.
-			<ul>
-				<li>The package namespace has changed from com.ignotus to net.paulhertz</li>
-				<li>A library initializer class, IgnoCodeLib, should be called in the 
+			IgnoCodeLib 0.3 modifies and adds to 0.2 in some notable ways:
+			<ul class="changes">
+				<li>The package namespace has changed from <em>com.ignotus</em> to <em>net.paulhertz</em></li>
+				<li>A library initializer class, <code>IgnoCodeLib</code>, should be called in the 
 				    setup of the host PApplet. It will cache a static reference to the 
 				    PApplet for other classes in the same package. (Spinners and SpinnersTwo 
 				    in the examples show why this can be useful).</li>
-				<li>All classes that extend DisplayComponent now have constructors or 
+				<li>All classes that extend <code>DisplayComponent</code> now have constructors or 
 				    factory methods that do not require a reference to the host PApplet 
 				    be passed in. They obtain the reference from the initialized library.</li>
 				<li>Constructors and factory methods that pass in the host PApplet are 
 				    still supported. If you change the package namespaces, chances are that 
 				    code for IgnoCodeLib 0.2 will run with IgnoCodeLib 0.3.</li>
-				<li>The DocumentComponent.write() method now automatically performs a 
+				<li>The <code>DocumentComponent.write()</code> method now automatically performs a 
 				    transform (a horizontal mirror within the document bounding box) 
 				    of all nested geometry from the Processing coordinate 
 				    system to the Adobe Illustrator coordinate system. 
@@ -87,9 +83,11 @@
 				    method, not by write methods in other components.</li>
 				<li>The simplest way to use IgnoCodeLib is to add all components 
 				    to a document component, or to group components and layer components 
-				    within the document component. Then call the document component's draw() 
-				    method to draw and its write() method to write.</li>
+				    within the document component. Then call the document component's <code>draw()</code> 
+				    method to draw and its <code>write()</code> method to write.</li>
 			</ul>
+			<p>
+			<p>
 			The examples have all been updated for version 0.3, but the old examples 
 			(modified to run in version 0.3) are bundled in a .zip file in the 
 			examples folder.

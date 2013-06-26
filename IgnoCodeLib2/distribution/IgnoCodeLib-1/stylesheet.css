@@ -201,3 +201,14 @@ a:link:visited {
 #footer a, #menu a {
 	color:#333;
 }
+
+
+/* CUSTOM STYLES, IgnoCodeLib */
+
+ul.changes
+{
+	margin-left: 1em;
+	padding-left: 1em;
+}
+
+ul.changes li { padding-bottom: 0.33em; }
