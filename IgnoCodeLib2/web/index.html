@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>##library.name##</title>
+<meta name="description" content="A library for the Processing programming environment" />
+<meta name="keywords" content="processing.org, library, ##library.keywords##" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="ROBOTS" content="index,follow,archive" />
+<meta http-equiv="imagetoolbar" content="false" />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta name="author" content="##author.name##" />
+<meta name="Rating" content="General" />
+<meta name="revisit-after" content="7 Days" />
+<meta name="doc-class" content="Living Document" />
+<link rel="stylesheet" type="text/css" href="./stylesheet.css">
+</head>
+<body>
+	<div id="container">
+	
+		<div id="header">
+			<h1>##library.name##</h1>
+		</div>
+		
+		<div id="menu" class="clear">
+			<ul>
+				<li><a href="#about">About</a> \ </li>
+				<li><a href="#download">Download</a> \ </li>
+				<li><a href="#download">Installation</a> \ </li>
+				<li><a href="#examples">Examples</a> \ </li>
+				<li><a href="./reference/index.html" target="_blank">Reference</a></li>
+				<!-- <li><a href="#demos">Demos</a> \ </li> -->				
+				<!-- <li><a href="#misc">Misc</a> \ </li> -->
+				<!-- <li><a href="#images">Images</a> \ </li> -->
+			</ul>
+		</div>
+		
+		<div id="content" class="clear">
+			
+			<div id="about">
+			<h2>##library.name##</h2>
+			<p>
+			A library by <a href="##author.url##">##author.name##</a> for the <a href="http://www.processing.org" target="_blank">Processing</a> programming environment.<br>
+			Last update, ##date##.
+			</p>
+			<p>
+			##library.sentence##<br>
+			##library.paragraph##<br>
+			<!-- begin my description -->
+			<p>
+			Version 0.2 implemented many new features including:	
+			<ul>
+				<li>Transformation from the Processing coordinate 
+				    system to the Adobe Illustrator coordinate system.</li>
+				<li>Subclasses of BezShape with factory methods for rectangles, 
+				    ellipses, polygons, lines and curves.</li>
+				<li>Turtlegraphics with a stack of turtle states, handy for L-systems, etc.</li>
+				<li>A ComponentVisitor class for navigating and acting upon 
+				    elements in the hierarchical display list.</li>
+				<li>Drawing to off-screen buffers.</li>
+			</ul>
+			</p>
+			<p>
+			I delayed announcing a release of version 0.2 while Processing 2.0 was on its 
+			way. And I delayed. Here is version 0.3, for Processing 2.0.
+			</p>
+			<p>
+			IgnoCodeLib 0.3 modifies and adds to 0.2 in some notable ways.
+			<ul>
+				<li>The package namespace has changed from com.ignotus to net.paulhertz</li>
+				<li>A library initializer class, IgnoCodeLib, should be called in the 
+				    setup of the host PApplet. It will cache a static reference to the 
+				    PApplet for other classes in the same package. (Spinners and SpinnersTwo 
+				    in the examples show why this can be useful).</li>
+				<li>All classes that extend DisplayComponent now have constructors or 
+				    factory methods that do not require a reference to the host PApplet 
+				    be passed in. They obtain the reference from the initialized library.</li>
+				<li>Constructors and factory methods that pass in the host PApplet are 
+				    still supported. If you change the package namespaces, chances are that 
+				    code for IgnoCodeLib 0.2 will run with IgnoCodeLib 0.3.</li>
+				<li>The DocumentComponent.write() method now automatically performs a 
+				    transform (a horizontal mirror within the document bounding box) 
+				    of all nested geometry from the Processing coordinate 
+				    system to the Adobe Illustrator coordinate system. 
+				    The transform is only applied by the DocumentComponent write 
+				    method, not by write methods in other components.</li>
+				<li>The simplest way to use IgnoCodeLib is to add all components 
+				    to a document component, or to group components and layer components 
+				    within the document component. Then call the document component's draw() 
+				    method to draw and its write() method to write.</li>
+			</ul>
+			The examples have all been updated for version 0.3, but the old examples 
+			(modified to run in version 0.3) are bundled in a .zip file in the 
+			examples folder.
+			</p>			
+			<p>
+			The images in <a href="http://www.flickr.com/photos/ignotus/sets/72157629848917975/" 
+			target="_blank">Sampling Patterns 21</a> and 
+			<a href="http://www.flickr.com/photos/ignotus/sets/72157629848739037/" 
+			target="_blank">Boids 21</a> were created with this software. 
+			</p>
+			<!-- end my description -->
+			</p>
+		</div>
+			
+			
+			
+			<div id="download" class="clear">
+			<h2>Download</h2>
+			<p>
+			Download ##library.name## version ##library.prettyVersion## (##library.version##) in 
+			<a href="./download/##library.name##-##library.version##.zip">.zip format</a>.
+			</p>
+			<h2>Installation</h2>
+			<p>
+			Unzip and put the extracted ##library.name## folder into the libraries folder of your Processing sketches. Reference and examples are included in the ##library.name## folder.
+			</p>
+			</div>	
+			
+			
+			<div id="resources">
+			<p><strong>Keywords</strong>. ##library.keywords##</p>
+			<p><strong>Reference</strong>. Have a look at the javadoc reference <a href="./reference/index.html" target="_blank">here</a>. A copy of the reference is included in the .zip as well.</p>		
+			<p><strong>Source</strong>. The source code of ##library.name## is available at <a href="##source.url##">##source.host##</a>, and its repository can be browsed <a href="##source.repository##" target="_blank">here</a>.</p>			
+			</div>
+			
+			
+			<div id="examples" class="clear">
+			<h2>Examples</h2>
+			<p>Find a list of examples in the current distribution of ##library.name##, or have a look at them by following the links below.</p>
+			<ul>
+			##examples##
+			</ul>
+			</div>
+			
+			
+			<div id="info">
+			<h2>Tested</h2>
+			<p>
+			<!-- on which platform has the library been tested? -->
+			<strong>Platform</strong> ##tested.platform##
+			
+			<!-- which processing version did you use for testing your library? -->
+			<br /><strong>Processing</strong> ##tested.processingVersion##
+			
+			<!-- does your library depend on any other library or framework? -->
+			<br /><strong>Dependencies</strong> ##library.dependencies##
+			</p>
+			</div>
+		
+			
+			<!-- use the demos section for a list of applets run in a browser. -->
+			<!--
+			<div id="demos" class="clear">
+				<h2>demos</h2>
+				<p>
+				find a list of online applet demos below.
+				
+				<ul>
+					<li><a href="./applets/demo/index.html">demo</a></li>
+				</ul>
+				</p>
+			</div>
+			-->
+			
+			<!-- use the misc section for other relevant information. Activate the link to the misc section in the menu above. -->
+			<!--
+			<div id="misc" class="clear">
+				<p></p>
+			</div>
+			-->
+			
+			<!-- use the images/screenshots section. Activate the link to the misc section in the menu above. -->
+			<!-- -->
+			<div id="images" class="clear">
+			<p>
+			<a href="http://www.flickr.com/photos/ignotus/7113260741/in/set-72157629601877565" target="_blank"><img src="eclipse.jpg" alt="Eclipse" width="640" height="480" align="middle" /></a>
+			<br /><a href="http://www.flickr.com/photos/ignotus/7113260741/in/set-72157629601877565" target="_blank">Eclipse (detail)</a>
+			</p>
+			<p>
+			<a href="http://www.flickr.com/photos/ignotus/5303608990/in/set-72157626088733463/" target="_blank"><img src="losamantes.jpg" alt="Los Amantes" width="640" height="396" align="middle" /></a>
+			<br /><a href="http://www.flickr.com/photos/ignotus/5303608990/in/set-72157626088733463/" target="_blank">Los Amantes</a>
+			</p>
+			</div>
+			
+			
+			<br class="clear" />
+		</div>
+		
+		<div id="footer">
+			<p>by ##author.name##, ##copyright##.</p>
+		</div>
+	</div>
+</body>
+</html>

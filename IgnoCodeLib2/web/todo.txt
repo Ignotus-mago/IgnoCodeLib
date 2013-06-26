@@ -1,0 +1,9 @@
+Various possibilities, various priorities
+
+@Override tags wherever they apply, except in examples, where Processing has
+problems with them.
+
+Example code for off-screen drawing.
+
+TurtleBoids
+

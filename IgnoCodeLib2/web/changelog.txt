@@ -1,0 +1,50 @@
+IgnoCodeLib Change Log
+
+6/25/13 7:27 PM
+
+Version 0.2 implemented many new features including:
+
+	-- Transformation from the Processing coordinate system to the Adobe 
+	   Illustrator coordinate system.
+	-- Subclasses of BezShape with factory methods for rectangles, ellipses, 
+	   polygons, lines and curves.
+	-- Turtlegraphics with a stack of turtle states, handy for L-systems, etc.
+	-- Drawing to off-screen buffers.
+	-- A ComponentVisitor class for navigating and acting upon elements in the 
+	   hierarchical display list.
+
+I delayed announcing a release of version 0.2 while Processing 2.0 was on its 
+way. And I delayed. Here is version 0.3, for Processing 2.0.
+
+IgnoCodeLib 0.3 modifies and adds to 0.2 in some notable ways.
+
+	-- The package namespace has changed from com.ignotus to net.paulhertz
+	-- A library initializer class, IgnoCodeLib, should be called in the setup 
+	   of the host PApplet. It will cache a static reference to the PApplet for 
+	   other classes in the same package. (Spinners and SpinnersTwo in the 
+	   examples show why this can be useful).
+	-- All classes that extend DisplayComponent now have constructors or factory 
+	   methods that do not require a reference to the host PApplet be passed in. 
+	   They obtain the reference from the initialized library.
+	-- Constructors and factory methods that pass in the host PApplet are still 
+	   supported. If you change the package namespaces, chances are that code 
+	   for IgnoCodeLib 0.2 will run with IgnoCodeLib 0.3.
+	-- The DocumentComponent.write() method now automatically performs a 
+	   transform (horizontal mirror) of points from the Processing coordinate 
+	   system to the Adobe Illustrator coordinate system. The writeNoTransform() 
+	   method does what it says. WriteWithAITransform() is exactly the same as 
+	   write(). Note that the transform is only applied by the DocumentComponent 
+	   write method, not by write methods in other components. Only the document
+	   establishes the bounding box within which the transform takes place.
+	-- Probably the simplest way to use IgnoCodeLib is to add all components to
+	   a document component, or to group components or layer components within 
+	   the document component. Call the document component's draw() method to 
+	   draw and its write() method to write. It's that simple for drawing and 
+	   nearly that simple for writing an Adobe Illustrator 7.0 file. 
+
+The examples have all been updated for version 0.3, but the old examples 
+(modified to run in version 0.3) are bundled in a .zip file in the the 
+examples folder.
+
+
+
