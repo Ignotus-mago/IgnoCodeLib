@@ -3,14 +3,6 @@
  * Sample code for IgnoCodeLib Processing library by Paul Hertz
  * for IgnoCodeLib version 0.3.x and above
  * In this example, we use the various new methods in IgnoCodeLib 0.2 for creating ellipses and circles.
- * These methods belong to the new classes BezEllipse and BezCircle. You can't create an instance
- * of these classes with the new keyword because their constructors are protected. Instead, you call
- * one of their many "static factory methods" that return an instance of the class. See the code
- * below in createEllipses() and createCircles() for examples of each factory method.
- * Changes for IgnoCodeLib 0.3 include new package namespaces (net.paulhertz replaces com.ignotus),
- * and an IgnoCodeLib class that should be initialized on setup. When IgnoCodeLib is correctly initialized
- * as in "igno = new IgnoCodeLib(this);", you no longer need to pass a reference to the host PApplet 
- * to component constructors in IgnoCodeLib.  
  */
 
 import net.paulhertz.aifile.*;
