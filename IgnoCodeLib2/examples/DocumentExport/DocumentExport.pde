@@ -75,8 +75,6 @@ public void setupTransform() {
 
 /**
  * Creates a document tree with layers, groups, and shapes 
- * Note that the Document, Layer, and Group components need to be 
- * initialized with "this" (the PApplet that runs the show) as the first argument.
  */
 public void createDocument() {
   float x, y, radius, h, w;
